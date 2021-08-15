@@ -39,6 +39,7 @@
         </dependency>
     </dependencies>
     <build>
+    <pluginManagement>
         <plugins>
             <plugin>
             <groupId>org.jvnet.jax-ws-commons</groupId>
@@ -62,6 +63,7 @@
             </executions>
             </plugin>
         </plugins>
+        </pluginManagement>
     </build>
 
 
