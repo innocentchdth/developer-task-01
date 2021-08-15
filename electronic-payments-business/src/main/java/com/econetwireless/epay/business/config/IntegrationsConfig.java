@@ -1,8 +1,5 @@
 package com.econetwireless.epay.business.config;
 
-import com.econetwireless.epay.business.integrations.api.ChargingPlatform;
-import com.econetwireless.epay.business.integrations.impl.ChargingPlatformImpl;
-import com.econetwireless.in.webservice.IntelligentNetworkService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +10,10 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean;
+
+import com.econetwireless.epay.business.integrations.api.ChargingPlatform;
+import com.econetwireless.epay.business.integrations.impl.ChargingPlatformImpl;
+import com.econetwireless.in.soap.service.IntelligentNetworkService;
 
 /**
  * Created by tnyamakura on 17/3/2017.
@@ -27,7 +28,7 @@ public class IntegrationsConfig {
     private Environment env;
 
     @Bean
-    public ChargingPlatform chargingPlatform(final IntelligentNetworkService intelligentNetworkService) {
+    public ChargingPlatform chargingPlatform(final IntelligentNetworkService  intelligentNetworkService) {
         return new ChargingPlatformImpl(intelligentNetworkService);
     }
 
